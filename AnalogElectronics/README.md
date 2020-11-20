@@ -6,7 +6,7 @@
       A eletrônica analógica é aplicada na estação de monitoramento de ar Zéfiro, sendo um sistema de instrumentação eletrônica modular, onde seus componentes são distríbuidos no melhor posicionamento para seu uso e as ligações realizadas, por meio de cabos, com a central de controle, utilizando o microcontrolador ESP32.
   
  <p align="center">
-      <img src="RR_01.png" height="360" width="452"/> <img src="R03_2.png" height="360" width="452"/> 
+      <img src="RR_01.png" height="360" width="452"/> <img src="RR_02.png" height="360" width="452"/> 
 </p>
  
  
