@@ -27,7 +27,3 @@
   Débora Janini
   
   Felipe Alcântara
-
-  
-  
->>>>>>> Stashed changes
