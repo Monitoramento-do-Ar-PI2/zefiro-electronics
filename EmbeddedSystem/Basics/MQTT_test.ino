@@ -2,6 +2,8 @@
 Project: MQTT Test
 By: Felipe L. A.
 Organization: Zefiro
+Comments: Developed from the example of the PubSubClient library, 
+applied to an ESP32
 */
 
 #include <WiFi.h>
@@ -11,7 +13,8 @@ Organization: Zefiro
 #define BUILTIN_LED (2)
 const char* ssid = "Your WiFi Name";
 const char* password = "Your WiFi Password";
-const char* mqtt_server = "broker.mqtt-dashboard.com"; // Recommended the use of MQTTbox aplication for analisys
+// The MQTTbox application was used for analysis
+const char* mqtt_server = "broker.mqtt-dashboard.com"; 
 
 WiFiClient espClient;
 PubSubClient client(espClient);
