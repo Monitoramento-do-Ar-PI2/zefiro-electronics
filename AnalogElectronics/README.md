@@ -18,8 +18,7 @@
       <img src='sch_geral.PNG' height="452" width="657"/>
 </p>
   
-  
- 
+
   
   #### Desenvolvedores:
   Clara Justa
@@ -27,4 +26,3 @@
   Débora Janini
   
   Felipe Alcântara
-
