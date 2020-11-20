@@ -7,10 +7,7 @@
   
  <p align="center">
       ![alt-text-1](RR_01.png "Visão Externa") ![alt-text-2](R03_2.png "Visão Interna")
-</p>
- 
- 
- 
+  
  - **Esquemático Geral** O esquemático geral representa todos os módulos e suas conexões entre si, enquanto cada pasta tem o desenvolvimento individual do esqumático e layout de pcb destes módulos.
   
   
@@ -27,7 +24,3 @@
   Débora Janini
   
   Felipe Alcântara
-
-  
-  
->>>>>>> Stashed changes
