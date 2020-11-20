@@ -28,6 +28,3 @@
   
   Felipe Alcântara
 
-  
-  
->>>>>>> Stashed changes
