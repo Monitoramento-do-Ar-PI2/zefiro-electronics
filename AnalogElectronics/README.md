@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-Hello world!
-=======
 <h1 align="center">
       Eletrônica Analógica Zéfiro
 </h1>
