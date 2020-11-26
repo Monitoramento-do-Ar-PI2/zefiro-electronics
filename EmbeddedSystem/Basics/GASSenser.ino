@@ -18,10 +18,10 @@ void setup() {
    Serial.begin(115200);
   // put your setup code here, to run once:
   pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
-  pinMode(potPin0, INPUT);     // Initialize the BUILTIN_LED pin as an output
-  pinMode(potPin1, INPUT);     // Initialize the BUILTIN_LED pin as an output
+  pinMode(WE_pin, INPUT);     // Initialize the WE_pin pin as an input
+  pinMode(AUX_pin, INPUT);     // Initialize the AUX_pin pin as an input
 
-  Serial.print("Hello Wolrd!! \n");
+  Serial.println("Setup Done!");
 }
 
 void loop() {
