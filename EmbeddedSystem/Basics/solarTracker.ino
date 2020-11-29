@@ -5,6 +5,14 @@ Organization: Zefiro
 */
 #include <Servo.h>
 
+#define LDR0 (18)
+#define LDR1 (19)
+#define LDR2 (12)
+#define LDR3 (13)
+
+#define MOTORH (27)
+#define MOTORV (28)
+
 Servo Hservo; // Horizontal Servo motor
 Servo Vservo; // Vertical Servo motor
 
@@ -17,20 +25,21 @@ int VS_toplimit = 75;
 int HS_downlimit = 5;
 int VS_dowlimit = 15;
 
-
+int servov = 0;
+int servoh = 0;
 // LDR pin connections
 // name = analogpin;
-int ldrlt = A0; //LDR top left - BOTTOM LEFT <--- BDG
-int ldrrt = A3; //LDR top rigt - BOTTOM RIGHT
-int ldrld = A1; //LDR down left - TOP LEFT
-int ldrrd = A3; //ldr down rigt - TOP RIGHT
+int ldrlt = LDR0; //LDR top left - BOTTOM LEFT <--- BDG
+int ldrrt = LDR1; //LDR top rigt - BOTTOM RIGHT
+int ldrld = LDR2; //LDR down left - TOP LEFT
+int ldrrd = LDR3; //ldr down rigt - TOP RIGHT
 
 void setup(){
-horizontal.attach(9);
-vertical.attach(10);
-horizontal.write(180);
-vertical.write(45);
-delay(2500);
+    Hservo.attach(MOTORH);
+    Vservo.attach(MOTORV);
+    Hservo.write(begin_HS);
+    Vservo.write(begin_VS);
+    delay(2500);
 }
 
 void loop() {
@@ -58,7 +67,7 @@ void loop() {
                     servov = VS_dowlimit;
                 }
             }
-        vertical.write(begin_VS);
+        Vservo.write(begin_VS);
     }
     if (-1*tol > dhoriz || dhoriz > tol){ // check if the diffirence is in the tolerance else change horizontal angle
         if (avl > avr){
@@ -76,7 +85,7 @@ void loop() {
         else if (avl = avr){
             delay(5000);
         }
-        horizontal.write(begin_HS);
+        Hservo.write(begin_HS);
     }   
     delay(dtime);
  
