@@ -49,34 +49,34 @@ void loop() {
     if (-1*tol > dvert || dvert > tol){
         if (avt > avd){
             servov = ++servov;
-            if (servov > servovLimitHigh){
-                servov = servovLimitHigh;}
+            if (servov > VS_toplimit){
+                servov = VS_toplimit;}
             }
             else if (avt < avd){
                 servov= --servov;
-                if (servov < servovLimitLow){
-                    servov = servovLimitLow;
+                if (servov < VS_dowlimit){
+                    servov = VS_dowlimit;
                 }
             }
-        vertical.write(servov);
+        vertical.write(begin_VS);
     }
     if (-1*tol > dhoriz || dhoriz > tol){ // check if the diffirence is in the tolerance else change horizontal angle
         if (avl > avr){
             servoh = --servoh;
-            if (servoh < servohLimitLow){
-                servoh = servohLimitLow;
+            if (servoh < HS_downlimit){
+                servoh = HS_downlimit;
             }
         }
         else if (avl < avr){
             servoh = ++servoh;
-            if (servoh > servohLimitHigh){
-                servoh = servohLimitHigh;
+            if (servoh > HS_toplimit){
+                servoh = HS_toplimit;
         }
     }
         else if (avl = avr){
             delay(5000);
         }
-        horizontal.write(servoh);
+        horizontal.write(begin_HS);
     }   
     delay(dtime);
  
