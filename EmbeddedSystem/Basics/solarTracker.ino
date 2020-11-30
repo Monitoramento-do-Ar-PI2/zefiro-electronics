@@ -27,33 +27,34 @@ int VS_dowlimit = 15;
 
 int servov = 0;
 int servoh = 0;
-// LDR pin connections
-// name = analogpin;
-int ldrlt = LDR0; //LDR top left - BOTTOM LEFT <--- BDG
-int ldrrt = LDR1; //LDR top rigt - BOTTOM RIGHT
-int ldrld = LDR2; //LDR down left - TOP LEFT
-int ldrrd = LDR3; //ldr down rigt - TOP RIGHT
 
 void setup(){
     Hservo.attach(MOTORH);
     Vservo.attach(MOTORV);
     Hservo.write(begin_HS);
     Vservo.write(begin_VS);
-    delay(2500);
+    pinMode(LDR0, INPUT);
+    pinMode(LDR1, INPUT);
+    pinMode(LDR2, INPUT);
+    pinMode(LDR3, INPUT);
+    delay(100);
 }
 
 void loop() {
-    int lt = analogRead(ldrlt); // top left
-    int rt = analogRead(ldrrt); // top right
-    int ld = analogRead(ldrld); // down left
-    int rd = analogRead(ldrrd); // down right
-    int dtime = 10; int tol = 90; // dtime=diffirence time, tol=toleransi
-    int avt = (lt + rt) / 2; // average value top
-    int avd = (ld + rd) / 2; // average value down
-    int avl = (lt + ld) / 2; // average value left
-    int avr = (rt + rd) / 2; // average value right
-    int dvert = avt - avd; // check the diffirence of up and down
-    int dhoriz = avl - avr;// check the diffirence og left and rigt
+
+    int topLeft   = analogRead(LDR0); 
+    int topRight  = analogRead(LDR1); 
+    int downLeft  = analogRead(LDR2); 
+    int downRight = analogRead(LDR3); 
+
+    int tol = 90; 
+
+    int av_top   = (topLeft + topRight)/2;   // average value top
+    int av_down  = (downLeft + downRight)/2; // average value down
+    int av_left  = (topLeft + downLeft)/2;   // average value left
+    int av_right = (topRight + downRight)/2; // average value right
+    int dif_vert = av_top - av_down;   // check the diffirence of up and down
+    int dif_hori = av_left - av_right; // check the diffirence og left and rigt
 
     if (-1*tol > dvert || dvert > tol){
         if (avt > avd){
@@ -67,7 +68,7 @@ void loop() {
                     servov = VS_dowlimit;
                 }
             }
-        Vservo.write(begin_VS);
+        Vservo.write(servov);
     }
     if (-1*tol > dhoriz || dhoriz > tol){ // check if the diffirence is in the tolerance else change horizontal angle
         if (avl > avr){
@@ -83,10 +84,10 @@ void loop() {
         }
     }
         else if (avl = avr){
-            delay(5000);
+            delay(100);
         }
-        Hservo.write(begin_HS);
+        Hservo.write(servoh);
     }   
-    delay(dtime);
+    delay(100);
  
 }
