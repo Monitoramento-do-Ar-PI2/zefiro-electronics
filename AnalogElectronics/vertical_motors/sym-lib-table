@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name vertical_motors-rescue)(type Legacy)(uri ${KIPRJMOD}/vertical_motors-rescue.lib)(options "")(descr ""))
+)
