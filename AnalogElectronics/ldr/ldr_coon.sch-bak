@@ -1,0 +1,108 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Screw_Terminal_01x03 LDR0
+U 1 1 5F993B4F
+P 4750 3900
+F 0 "LDR0" H 4830 3892 50  0000 L CNN
+F 1 "LDR0" H 4830 3801 50  0000 L CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical" H 4750 3900 50  0001 C CNN
+F 3 "~" H 4750 3900 50  0001 C CNN
+	1    4750 3900
+	1    0    0    -1  
+$EndComp
+Text GLabel 4550 3800 0    50   Input ~ 0
+LDR0
+$Comp
+L Device:R_PHOTO R1
+U 1 1 5F9943CE
+P 5650 3700
+F 0 "R1" H 5720 3746 50  0000 L CNN
+F 1 "LDR" H 5720 3655 50  0000 L CNN
+F 2 "OptoDevice:R_LDR_5.1x4.3mm_P3.4mm_Vertical" V 5700 3450 50  0001 L CNN
+F 3 "~" H 5650 3650 50  0001 C CNN
+	1    5650 3700
+	1    0    0    -1  
+$EndComp
+Text GLabel 4550 4000 0    50   Output ~ 0
++5V
+Text GLabel 5650 3550 1    50   Input ~ 0
++5V
+Text GLabel 5800 3950 2    50   Output ~ 0
+LDR0
+$Comp
+L power:GND #PWR01
+U 1 1 5F9C72CD
+P 4550 3900
+F 0 "#PWR01" H 4550 3650 50  0001 C CNN
+F 1 "GND" V 4555 3772 50  0000 R CNN
+F 2 "" H 4550 3900 50  0001 C CNN
+F 3 "" H 4550 3900 50  0001 C CNN
+	1    4550 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5F9C7750
+P 5650 4200
+F 0 "R2" H 5720 4246 50  0000 L CNN
+F 1 "1k" H 5720 4155 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5580 4200 50  0001 C CNN
+F 3 "~" H 5650 4200 50  0001 C CNN
+	1    5650 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 3850 5650 3950
+Wire Wire Line
+	5800 3950 5650 3950
+Connection ~ 5650 3950
+Wire Wire Line
+	5650 3950 5650 4050
+$Comp
+L power:GND #PWR02
+U 1 1 5F9C81CD
+P 5650 4350
+F 0 "#PWR02" H 5650 4100 50  0001 C CNN
+F 1 "GND" H 5655 4177 50  0000 C CNN
+F 2 "" H 5650 4350 50  0001 C CNN
+F 3 "" H 5650 4350 50  0001 C CNN
+	1    5650 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5F9CC231
+P 1000 7450
+F 0 "H1" H 1100 7496 50  0000 L CNN
+F 1 "MountingHole" H 1100 7405 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 1000 7450 50  0001 C CNN
+F 3 "~" H 1000 7450 50  0001 C CNN
+	1    1000 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5F9CC719
+P 1850 7450
+F 0 "H2" H 1950 7496 50  0000 L CNN
+F 1 "MountingHole" H 1950 7405 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 1850 7450 50  0001 C CNN
+F 3 "~" H 1850 7450 50  0001 C CNN
+	1    1850 7450
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
