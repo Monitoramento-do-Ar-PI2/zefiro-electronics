@@ -15,7 +15,7 @@
   
   
 <p align="center">
-      <img src='esq_geral.pdf' height="452" width="657"/>
+      <img src='esq_geral.png' height="452" width="657"/>
 </p>
   
  
